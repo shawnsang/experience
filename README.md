@@ -1,21 +1,38 @@
-# git-wiki-skeleton
+# 欢迎来到 技术宅男 关于中国传统文化 和 CICD 的分享站
 
-NOTE: it's fully supported by github platform, you don't need to install anything locally
 
-This is a [skeleton](skeleton) repository that can be used as a template to bootstrap your wiki using "[remote_theme](https://github.com/benbalter/jekyll-remote-theme)" config
 
-For documentation, installation guide and demo of git-wiki-theme visit [THIS PAGE](http://drassil.github.io/git-wiki/)
 
-To report an issue, please use the [git-wiki-theme issues](https://github.com/Drassil/git-wiki-theme/issues)
+![](/experience/assets/images/如人饮水冷暖自知.png)
 
-## The git-wiki project
 
-The git-wiki project is composed by 3 different repository:
 
-- [git-wiki-theme](https://github.com/Drassil/git-wiki-theme): This is the repository of the theme that implements the wiki functionalities. You would have not fork it unless you need to send a Pull Request or create your wiki project from scratch.
+## 读书
 
-- [git-wiki-skeleton](https://github.com/Drassil/git-wiki-skeleton): This is the repo that you should fork or use as a template. It uses the [jekyll remote theme](https://github.com/benbalter/jekyll-remote-theme) functionality that allows you to create your own wiki based on git-wiki-theme. By using the remote functionality you can automatically keep your wiki always updated with latest features from the **git-wiki-theme**, but you can also fully customize it.
+半日读书、半日静坐
 
-- [git-wiki](https://github.com/Drassil/git-wiki): This is the documentation repository and website of the **git-wiki-theme** project. You would have not fork it unless you want to contribute to the git-wiki project documentation.
+以前，不知道读书为何，只是觉得多读书，能增长见识。慢慢读的多了，有了点感觉，于是给书分类三类，生存，生活和生命。
 
-Version: 1.0.9
+* 生存：讲衣食住行，吃的好、穿的舒服、有品位，住的舒适、挣更多的钱
+* 生活：琴棋书画诗酒茶，提升一下品质
+* 生命：我是谁、从哪里来、到哪里去
+
+
+
+## CICD/DevOps
+
+做CICD很有意思，同时，也很有压力。做的好了，不显眼，项目整个运行很顺畅，大家觉得本该如此。做的不好了，妨碍的项目进度，立刻就在老板面前出了名。 
+
+
+从2004年开始工作，软件开发、项目管理、配置管理、参与公司 CMMi Level4 评估，到后来，全面负责IBM SPSS Statistic 的 CICD工作，而后参加 Match360（Cloud Native）的开发和DevOps任务，2024年4月，开始正式学习 AI。 在这里分享一下我的经验，既是对我的记录，也希望能够为其他人提供一些帮助。
+
+
+## Who am I
+
+![](/experience/assets/images/2023-ShawnSang.png)
+
+
+
+## More
+
+右上角“查询”栏，可以找到更多我的分享
