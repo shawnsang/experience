@@ -110,11 +110,11 @@ Continue 插件使用默认设置，自动发现服务。
 sequenceDiagram
   participant VSCode
   participant SSH
-  VSCode->Ollama: Please help me to refine the code?
+  VSCode->>Ollama: Please help me to refine the code?
   loop thinking
-      Ollama->Ollama: generate the code
+    Ollama->>Ollama: generate the code
   end
-  Note right of Ollama: referring history <br/>context...
-  Ollama-->VSCode: Code suggestion for you!
+  Note right of Ollama: referring history context...
+  Ollama-->>VSCode: Code suggestion for you!
 ```
 
