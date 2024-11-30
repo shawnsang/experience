@@ -44,6 +44,9 @@ use_prose_io: true
 # - github : it uses internal github repository search
 # - google : it uses cse search bar, you need to configure google_cse_token
 #
+mermaid:
+  enabled: true
+  
 search_engine : "js"
 # Setting google custom search engine for google
 # cse search bar (https://cse.google.it/cse/)
@@ -137,7 +140,7 @@ inc_after_head :
 inc_before_meta : 
 inc_after_meta : 
 inc_before_scripts : 
-inc_after_scripts : 
+inc_after_scripts : mermaid-scripts.html
 inc_before_styles : 
 inc_after_styles : 
 inc_before_header : 
