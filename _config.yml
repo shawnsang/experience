@@ -106,6 +106,7 @@ plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
+  - jekyll-mermaid
   - jekyll-mentions
   - jekyll-optional-front-matter
   - jekyll-readme-index
