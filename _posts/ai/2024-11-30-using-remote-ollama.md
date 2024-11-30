@@ -106,7 +106,7 @@ Continue 插件使用默认设置，自动发现服务。
 
 ## 序列图[序列图](https://github.com/knsv/mermaid#sequence-diagram)
 
-```mermaid
+<div class="mermaid">
 sequenceDiagram
   participant VSCode
   participant SSH
@@ -116,5 +116,5 @@ sequenceDiagram
   end
   Note right of Ollama: referring history context...
   Ollama-->>VSCode: Code suggestion for you!
-```
+</div>
 
