@@ -22,7 +22,7 @@ show_wiki_posts_limit: 10
 paginate: 5
 paginate_path: "/assets/blog/page:num"
 permalink: /assets/blog/posts/:year/:month/:day/:title:output_ext
-sort_by: last_modified
+sort_by: date
 # (boolean) Enable/disable download buttons in sidebar
 show_downloads: true
 # (string) Specify branch rendered by gitpages allowing wiki tool buttons to work
@@ -30,7 +30,7 @@ git_branch: "master"
 # (string) Url of logo image, it can be full, absolute or relative.
 logo_url: assets/images/1200px-Wikipedia-logo-v2.svg_.png
 # (string) The UA-XXXXX-Y code from google analytic to enable GA on your wiki
-google_analytics: 
+# google_analytics: 
 # (string) folder where wiki pages are stored, it's needed for tool buttons
 wiki_folder: "wiki"
 # (boolean) if you're using github wiki as submodule then this config
