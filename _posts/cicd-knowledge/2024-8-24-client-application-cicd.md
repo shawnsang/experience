@@ -73,3 +73,34 @@ client 应用程序必然都会有一个安装包，以便于用户下载和安�
 ![](/experience/assets/images/posts/cicd_devops/client-app-cicd/regressiontest.png)
 
 完成regression test 的安装包，最后被放置到 release repo，随时可以发布到下载站点，供用户下载了。 
+
+
+
+# Cloud CICD 的流程
+
+Cloud CICD 的流程，和 Client 应用的 CICD 流程很相似，只是，Cloud 应用的 CICD 流程会多一些集成测试，因为 Cloud 应用的集成测试，需要多个应用一起测试，例如， Cloud 应用 A 和 Cloud 应用 B，Cloud 应用 A 的集成测试，需要 Cloud 应用 B 的 component，Cloud 应用 B 的集成测试，需要 Cloud 应用 A 的 component。
+
+## 1 基本工具
+相比 Client 应用开发，Cloud native 应用开发，需要更多的工具，例如，Docker, trivy, ansible, kubernetes, helm, terraform, cloud provider等。
+
+
+## 2 开发管理
+比较 Client 应用开发，Cloud Native应用开发没有那么多OS平台的干扰，主要是在 Linux 上，并以 Docker image 的形式打包开发应用。然后以 microservice 的形式，在 Kubernetes 上部署。
+
+## 3 详细流程
+
+### 3.1 PR 流程
+![](/experience/assets/images/posts/cicd_devops/client-app-cicd/cloud_pr.png)
+
+主要检查和 Client类似，就是会多 docker build，以及使用 trivy 做漏洞扫描。Trivy 漏洞扫描作为 DevSecOps 的要求，集成到 PR检查中，能更好的及时提醒开发人员修复问题，但是一般不作为必要条件，因为这个第三方的依赖出现漏洞的时间是不固定的，以防break重要的功能代码 check in。当然，在后续的集成测试中，也会再次做一次漏洞扫描。
+
+
+### 3.2 Code merged to main
+
+![](/experience/assets/images/posts/cicd_devops/client-app-cicd/ms_integration.png)
+
+单一微服务的集成测试，需要考虑的是 集成环境资源的使用情况。如果集成测试资源要求不高，也就是整个 Application的架构不复杂，可以比较容易的获得集成资源，那么集成测试就可以自由一些，根据需要，随时创建集成测试环境，并充分进行测试。如果是 Application的架构很复杂，消耗资源很多，无法获得很多的集成测试环境，则需要考虑集成测试环境的使用效率，针对单个微服务，仅测试少量基本功能。最后在一批整体部署打包的环境中，做完整集成测试。
+
+
+
+未完待续 。。。
