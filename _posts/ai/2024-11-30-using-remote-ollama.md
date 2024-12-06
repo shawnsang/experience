@@ -1,4 +1,15 @@
+---
+title: 在VSCode中使用远程多卡 Ollama
+last_modified_at: 2024-11-30 12:34:56 +0000
+---
 # 在VSCode中使用远程多卡 Ollama
+
+对于开发大模型语言的同学们，都想使用高性能显卡来跑模型，进行调优或者推理，但是如果个人购买一张或者多张显卡的话，成本还是很高的，当然，土豪除外。
+
+本例就是利用 算力平台租借显卡，来运行大模型，然后将其设置成为模型服务器，在本地可以进行调用，支持开发工作。
+
+
+
 
 Ollama 可以非常方便的运行大语言模型，在本地或者算力平台上部署后，可以做各类AI应用的原型开发。
 
@@ -17,7 +28,7 @@ AutoDL上可以根据需要选择不同类型的显卡组合，本次尝试使�
 ![](/experience/assets/images/posts/ai/ollama/autodl_choose_gpu.png)
 
 
-系统镜像直接使用了 agiclass 提供的 vllm部署镜像，可以另外实验 vllm的部署。本例中主要验证 Ollama的部署。
+系统镜像直接使用了 agiclass 提供的 vllm部署镜像，可以另外实验 vllm的部署。本例中主要验证 Ollama的部署。 或者直接使用 Ollama/ollama 镜像，该镜像补充了一些系统库，可以支持 api/generate 接口。
 
 ![](/experience/assets/images/posts/ai/ollama/autodl_choose_model.png)
 
@@ -30,9 +41,14 @@ curl -fsSL https://ollama.com/install.sh | sh
 ```
 
 
-启动 Ollama服务，最后两行清楚的看到了， Ollama加载了两张4090的显卡，非常方便，不用做任何特殊设置。
+启动 Ollama服务，最后两行清楚的看到了， Ollama加载了两张4090的显卡，非常方便，不用做任何特殊设置。如果需要后台守护进程，可以使用 'tmux' 命令，将 Ollama服务后台运行。
+
 
 ```
+apt-get update && apt-get install -y tmux
+tmux
+
+
 ollama serve
 2024/11/30 12:03:38 routes.go:1197: INFO server config env="map[CUDA_VISIBLE_DEVICES: GPU_DEVICE_ORDINAL: HIP_VISIBLE_DEVICES: HSA_OVERRIDE_GFX_VERSION: HTTPS_PROXY: HTTP_PROXY: NO_PROXY: OLLAMA_DEBUG:false OLLAMA_FLASH_ATTENTION:false OLLAMA_GPU_OVERHEAD:0 OLLAMA_HOST:http://127.0.0.1:11434 OLLAMA_INTEL_GPU:false OLLAMA_KEEP_ALIVE:5m0s OLLAMA_LLM_LIBRARY: OLLAMA_LOAD_TIMEOUT:5m0s OLLAMA_MAX_LOADED_MODELS:0 OLLAMA_MAX_QUEUE:512 OLLAMA_MODELS:/root/autodl-tmp/ollama_images/ OLLAMA_MULTIUSER_CACHE:false OLLAMA_NOHISTORY:false OLLAMA_NOPRUNE:false OLLAMA_NUM_PARALLEL:0 OLLAMA_ORIGINS:[http://localhost https://localhost http://localhost:* https://localhost:* http://127.0.0.1 https://127.0.0.1 http://127.0.0.1:* https://127.0.0.1:* http://0.0.0.0 https://0.0.0.0 http://0.0.0.0:* https://0.0.0.0:* app://* file://* tauri://* vscode-webview://*] OLLAMA_SCHED_SPREAD:false OLLAMA_TMPDIR: ROCR_VISIBLE_DEVICES: http_proxy: https_proxy: no_proxy:]"
 time=2024-11-30T12:03:38.994+08:00 level=INFO source=images.go:753 msg="total blobs: 0"
