@@ -17,6 +17,10 @@
 ### **系统目标**
 
 - 解析 Akshare 的接口文档（股票、基金、期货等），生成多个 Agent，分别负责不同领域的数据查询。
+  - 股票工具数量：310 (https://akshare.akfamily.xyz/data/stock/stock.html)
+  - 期货工具数量：44 (https://akshare.akfamily.xyz/data/futures/futures.html) 
+  - 公募基金工具数量：58 (https://akshare.akfamily.xyz/data/fund/fund_public.html)
+  - 私募基金工具数量：14 (https://akshare.akfamily.xyz/data/fund/fund_private.html)
 - 基于用户的自然语言输入，自动推理选择合适的 Agent 和接口方法。
 - 自动生成查询代码，调用 Akshare 接口并返回结果。
 - 提供易于扩展的 Python 实现，方便后续新增功能或接口。
